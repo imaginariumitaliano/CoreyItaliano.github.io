@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Read a Free Excerpt | Corey Italiano</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Read a free excerpt from the Dova Sku Series by Corey Italiano: Transync and Ascendant.">
+  <style>
+    :root {
+      --bg: #020617;
+      --accent: #ff6b2c;
+      --accent-soft: #f59e0b;
+      --ink: #f9fafb;
+      --ink-muted: #9ca3af;
+      --card-radius: 1rem;
+      --shadow-soft: 0 22px 45px rgba(0,0,0,0.55);
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(148,163,184,0.18);
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to right, rgba(15,23,42,0.92), rgba(15,23,42,0.75));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-brand {
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      padding: 0;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: var(--ink-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--ink);
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    .page-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.26em;
+      font-size: 0.75rem;
+      color: var(--accent-soft);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 2.7rem);
+      margin: 0 0 0.4rem;
+    }
+
+    .page-lede {
+      color: var(--ink-muted);
+      max-width: 42rem;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-sample {
+      background: radial-gradient(circle at top left, rgba(148,163,184,0.25), transparent 55%),
+                  linear-gradient(145deg, #020617, #020617 60%, #050816 100%);
+      border-radius: 1.4rem;
+      padding: 1.8rem 1.7rem 2rem;
+      border: 1px solid rgba(148,163,184,0.32);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-sample p {
+      margin: 0.4rem 0;
+    }
+
+    .hero-meta {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      margin-top: 0.4rem;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin: 0.3rem 0 0.7rem;
+    }
+
+    .badge {
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      padding: 0.2rem 0.65rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--ink-muted);
+    }
+
+    .badge-strong {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .excerpt-card {
+      background: linear-gradient(145deg, #020617, #020617 60%, #050816 100%);
+      border-radius: var(--card-radius);
+      padding: 1.5rem 1.6rem 1.7rem;
+      border: 1px solid rgba(148,163,184,0.3);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.94rem;
+      color: var(--ink-muted);
+    }
+
+    .excerpt-header {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: center;
+    }
+
+    .excerpt-cover {
+      border-radius: 0.8rem;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: #020617;
+      width: 80px;
+      max-height: 120px;
+      flex-shrink: 0;
+    }
+
+    .excerpt-cover img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .excerpt-header h2 {
+      font-size: 1.1rem;
+      margin: 0 0 0.2rem;
+      color: var(--ink);
+    }
+
+    .excerpt-header .series-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-muted);
+    }
+
+    .excerpt-hook {
+      font-size: 0.9rem;
+      color: var(--ink-muted);
+      margin-bottom: 1rem;
+    }
+
+    .excerpt-body {
+      background: rgba(15,23,42,0.85);
+      border-radius: 0.8rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      padding: 1rem 1.1rem;
+      max-height: 420px;
+      overflow-y: auto;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .excerpt-body h3 {
+      font-size: 0.95rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .excerpt-body p {
+      margin: 0 0 0.8rem;
+    }
+
+    .excerpt-footer {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+    }
+
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      margin-top: 0.7rem;
+    }
+
+    .links-row a {
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border-radius: 999px;
+      padding: 0.3rem 0.9rem;
+      border: 1px solid rgba(148,163,184,0.44);
+      color: var(--ink-muted);
+    }
+
+    .links-row a:hover {
+      border-color: var(--accent-soft);
+      color: var(--accent-soft);
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-top: 0.6rem;
+      max-width: 40rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(30,64,175,0.4);
+      padding: 1.5rem 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      text-align: center;
+      background: #020617;
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding-inline: 1rem;
+      }
+
+      nav ul {
+        gap: 0.75rem;
+        font-size: 0.8rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .excerpt-card {
+        padding-inline: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">COREY ITALIANO</a>
+    <nav>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#series">Series</a></li>
+        <li><a href="universe.html">Universe</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="#top">Read Free</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="page-kicker">Free Preview</div>
+  <h1>Read a Free Excerpt</h1>
+  <p class="page-lede">
+    Want to test-drive the Dova Sku universe before you commit? Grab a
+    spoiler-light taste of the opening chapters below—then keep going
+    in your preferred format.
+  </p>
+
+  <div class="hero-sample">
+    <p>
+      The Dova Sku Series begins with a one-way mission to a new world
+      with alien creatures and mystery abound.
+    </p>
+    <p class="hero-meta">
+      These excerpts are taken from early chapters to avoid major spoilers,
+      but they still drop you straight into the action.
+    </p>
+  </div>
+
+  <section>
+    <div class="grid-2">
+      <!-- TRANSYNC EXCERPT -->
+      <article class="excerpt-card">
+        <div class="excerpt-header">
+          <div class="excerpt-cover">
+            <img src="images/transync-cover.jpg" alt="Transync book cover">
+          </div>
+          <div>
+            <div class="series-label">Book 1 · The Dova Sku Series</div>
+            <h2>Transync</h2>
+            <div class="badge-row">
+              <span class="badge badge-strong">Start Here</span>
+              <span class="badge">New World</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="excerpt-hook">
+          Humanity’s first mission to a habitable exoplanet. One soldier
+          with nothing holding him to Earth, and a crew ready to explore 
+          a new world and all its mysteries.
+        </p>
+
+        <div class="excerpt-body">
+          <h3>Excerpt - Transync – Prologue</h3>
+
+          <!--
+            "One step at a time. One foot after the other. Right foot. Left foot. Right, left, right, left. Gotta keep going. Not far now. Come on, you can make it."
+The muscles in his thighs strained with every step, every movement, every little twitch.
+"One step at a time. One foot after the other." 
+He'd been repeating the phrase like a mantra. Four days now, walking, sleeping, walking some more. When he'd finally found the stream, he was relieved. Surely, this would lead him in the right direction. He had to be getting close now. The FOB should be right over the horizon.
+"Right foot. Left foot. Right foot. Left foot."
+Thunder rolled through the afternoon air from a storm that had built to the south. He turned his gaze left to gauge the coming rain. It looked like it was a couple of hours out. At least, he hoped so. The rain wouldn't stop him, though; nothing could stop him. Not Mother Nature, not the Svixen, hell, not even me.
+He looked up from his mantra, and for the first time that day, his feet stopped. Ahead of him, the veil of trees opened up, and he could see a thin plume of smoke fading into the clouds in the distance. A burst of adrenaline that he didn't think he had left in him coursed through his veins, and he darted off the side of the path and through the underbrush. Breaking out from the tree cover, he stood at the edge of the rolling-hilled valley overlooking the desolate wasteland that had once been the forward operating base for two hundred and fifty people.
+How did he get here? How did this all happen? How did things go so wrong? Less than three years ago, he was home with his brother. They'd signed up for the mission together—the mission to the first habitable planet, Catora as they called it, outside the solar system. Sixty light-years away in the Galus system. The thought of a new world and a new life was the perfect escape from their dejected past.
+Three months of testing, another three months of preparation, then the long sleep. The EM Tether got them there in only two years. They'd been on the planet for seven months when the flood came—not of water but death, destruction, hate, and pain. They called themselves the Svixen, and the flood they brought with them, Earth might have called it biblical.
+Maybe, I should start at the beginning. His name is Christopher Thompkins, and I call him a friend, but the Svixen, they would come to call him Dova Sku—Hell Machine. 
+
+          -->
+        </div>
+
+        <div class="excerpt-footer">
+          Like what you read?
+          <div class="links-row">
+            <a href="https://www.amazon.com/stores/Corey-Italiano/author/B0CZJZ7DSH?ref=dbs_m_mng_rwt_byln&qid=1764959964&sr=8-1&isDramIntegrated=true&shoppingPortalEnabled=true&ccs_id=bcd5b2f5-597c-4016-8e55-d26d1417c1aa"
+               target="_blank" rel="noopener">
+              Amazon Author Page
+            </a>
+            <a href="https://www.barnesandnoble.com/s/%22Corey%20Italiano%22?Ntk=P_key_Contributor_List&Ns=P_Sales_Rank&Ntx=mode+matchall"
+               target="_blank" rel="noopener">
+              Barnes &amp; Noble Author Page
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ASCENDANT EXCERPT -->
+      <article class="excerpt-card">
+        <div class="excerpt-header">
+          <div class="excerpt-cover">
+            <img src="images/ascendant-cover.jpg" alt="Ascendant book cover">
+          </div>
+          <div>
+            <div class="series-label">Book 2 · The Dova Sku Series</div>
+            <h2>Ascendant</h2>
+            <div class="badge-row">
+              <span class="badge badge-strong">Continue the Story</span>
+              <span class="badge">New Worlds</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="excerpt-hook">
+          WARNING! Book 1 Spoilers - The human survivors on Catora 
+          have no way back to Earth, but they do have an AI who 
+          will do whatever it takes to help. With an angry galaxy 
+          between them and home, and a Dova Sku, who hasn’t 
+          decided what “winning” looks like yet. They'll forge 
+          ahead into new worlds.
+        </p>
+
+        <div class="excerpt-body">
+          <h3>Excerpt – Ascendant - Chapter 9</h3>
+
+          <!--
+           Chris hit the ground laughing like a lunatic, air knocked from his lungs, face split in a grin he couldn’t suppress. It wasn’t the fall, it was Miller’s expression, frozen in his mind like a work of art: part horror, part resignation. Like watching someone drop a wedding cake in slow motion.
+Fenrir rolled once beside him, landed on all fours, and let out a low ‘whuff’ as he shook the dimensional static from his fur.
+“Okay,” Chris wheezed, coughing once. “That... was new.”
+He blinked away the portal sickness and looked around.
+The terrain was dense jungle; thick vines, crimson-hued trees, and air that shimmered with mist. The ground was damp beneath him. Violet sunlight struggled through the canopy. They hadn’t come out in a Transync station like we’d expected. This gate was wide open to the outside world. He turned around to just catch the flare of blue light from the door as it blinked out. Behind him was a solid rock wall with a few time-worn glyphs barely visible around the edges of what would be the portal. 
+Fenrir let out a quiet rumble and nosed Chris’s shoulder.
+“Yeah, yeah. I’m good,” Chris muttered, reaching up to scratch behind the tarlon’s ear. “You just earned yourself a week’s worth of rations, you know that?”
+Fenrir gave a satisfied huff.
+“This station has not been used in a very long time,” I said inside Chris’s mind.
+Chris rose to his feet and motioned the tarlon to his side with a quick pat of his thigh. He checked his HUD. His team’s signals were ahead, close but moving. He stood and activated his comms. “This is LT. Just dropped through. Minor... animal interference. I’m heading toward your position.”
+It took less than thirty seconds for him to reach the first of his small team.
+“You good?” Davis asked, eyes flicking between Chris and the tarlon at his side.
+“Yeah. Fenrir got a little too excited. We had a bonding moment. Unplanned.”
+Linkenbach broke through the comms. “Did he at least buy you dinner first?”
+“Don’t tempt him,” Chris said. “He eats his meals raw.”
+“Animal interference confirmed,” Davis replied. 
+They pushed through the thick underbrush, keeping low. The jungle here was denser than any bioscan had suggested; roots like tripwires, leaves big enough to cover a hatchback. Fenrir padded beside him, nearly silent despite his size, head low and eyes scanning.
+He spotted Morgan first, half-crouched near a fallen log, rifle up. She gave him a small nod as he approached.
+“Took the scenic route?” she whispered.
+“Something like that,” Chris muttered.
+Linkenbach emerged from the brush a few paces ahead, already sweeping the area. Chance was chewing on a protein bar like nothing unusual had happened.
+Morgan smirked, but her expression shifted quickly. “You feel that?”
+Chris paused. The air had changed. He wasn’t sure how, but it had.
+No wind. No ambient clicks from local fauna. Just a thick silence hanging like fog.
+Fenrir’s ears twitched. A low growl started in his chest.
+Chris activated the team channel. “Heads on a swivel. Something’s off.”
+“Copy,” Davis said, already adjusting his stance.
+Linkenbach lowered his bar, stuffed the rest into his pocket, and drew his weapon with surprising grace for a guy who was just eating trail food.
+Fenrir moved ahead, nose to the ground. Chris followed, keeping his eyes scanning the trees.
+Then he saw it. Movement. Just a flicker. A shimmer behind a curtain of vines.
+“Contact, ten o’clock,” Chris said. “One figure. Large.”
+Linkenbach adjusted his scope. “It’s big, whatever it is.”
+More movement rustled the vines, and they all fixed their aim on target. 
+
+          -->
+        </div>
+
+        <div class="excerpt-footer">
+          Want more of the story?
+          <div class="links-row">
+            <a href="https://www.amazon.com/stores/Corey-Italiano/author/B0CZJZ7DSH?ref=dbs_m_mng_rwt_byln&qid=1764959964&sr=8-1&isDramIntegrated=true&shoppingPortalEnabled=true&ccs_id=bcd5b2f5-597c-4016-8e55-d26d1417c1aa"
+               target="_blank" rel="noopener">
+              Amazon Author Page
+            </a>
+            <a href="https://www.barnesandnoble.com/s/%22Corey%20Italiano%22?Ntk=P_key_Contributor_List&Ns=P_Sales_Rank&Ntx=mode+matchall"
+               target="_blank" rel="noopener">
+              Barnes &amp; Noble Author Page
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    </p>
+  </section>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Corey Italiano. All rights reserved.
+</footer>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

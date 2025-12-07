@@ -20,16 +20,16 @@
     * { box-sizing: border-box; }
 
     body {
-        margin: 0;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: 
-          linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
-          url("images/Background.png");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        color: var(--ink);
-        line-height: 1.7;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)),
+        url("images/Background.png");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: var(--ink);
+      line-height: 1.7;
     }
 
     a {
@@ -172,6 +172,45 @@
       color: var(--ink);
     }
 
+    /* WORLD PANELS: image left, text right */
+    .world-panel {
+      background: linear-gradient(145deg, #020617, #020617 60%, #050816 100%);
+      border-radius: var(--card-radius);
+      padding: 1.4rem 1.5rem 1.6rem;
+      border: 1px solid rgba(148,163,184,0.3);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.92rem;
+      color: var(--ink-muted);
+
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 1.25rem;
+      align-items: flex-start;
+      margin-bottom: 1.8rem;
+    }
+
+    .world-image {
+      width: 240px;
+      border-radius: 0.9rem;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.5);
+      background: #020617;
+      flex-shrink: 0;
+    }
+
+    .world-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .world-body h3 {
+      font-size: 1rem;
+      margin: 0 0 0.4rem;
+      color: var(--ink);
+    }
+
     .badge-row {
       display: flex;
       flex-wrap: wrap;
@@ -296,6 +335,14 @@
       .glossary-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+      .world-panel {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .world-image {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+      }
     }
   </style>
 </head>
@@ -303,16 +350,16 @@
 <header>
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">COREY ITALIANO</a>
-<nav>
-  <ul>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#series">Series</a></li>
-    <li><a href="universe.html">Universe</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="sample.html">Read Free</a></li>
-    <li><a href="index.html#newsletter">Stay Updated</a></li>
-  </ul>
-</nav>
+    <nav>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#series">Series</a></li>
+        <li><a href="universe.html">Universe</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="sample.html">Read Free</a></li>
+        <li><a href="index.html#newsletter">Stay Updated</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -345,9 +392,12 @@
       its original inhabitants.
     </p>
 
- 
-      <!-- Earth -->
-      <article class="card">
+    <!-- Earth -->
+    <article class="world-panel" id="earth">
+      <div class="world-image">
+        <img src="images/earth.png" alt="Earth">
+      </div>
+      <div class="world-body">
         <h3>Earth</h3>
         <div class="badge-row">
           <span class="badge badge-strong">Origin World</span>
@@ -368,10 +418,15 @@
             over every decision the crew makes.</li>
           <li><strong>Symbol:</strong> Home worth crossing a galaxy for.</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-      <!-- Catora / Randt -->
-      <article class="card">
+    <!-- Catora / Randt -->
+    <article class="world-panel" id="catora">
+      <div class="world-image">
+        <img src="images/catora.png" alt="Catora / Randt">
+      </div>
+      <div class="world-body">
         <h3>Catora / Randt</h3>
         <div class="badge-row">
           <span class="badge badge-strong">Sepu Homeworld</span>
@@ -379,9 +434,9 @@
         </div>
         <p>
           A forest-covered alien world that orbits a main-sequence K-Class star.
-          The Sky appears more orange, and the colors of plants differ from their 
+          The sky appears more orange, and the colors of plants differ from their 
           Earth-like counterparts. Populated by a vast array of mammalian and 
-          amtillian species(similar to both reptiles and amphibians from Earth, 
+          amtillian species (similar to both reptiles and amphibians from Earth, 
           but with six limbs). The world was once inhabited by the Sepu, an
           intelligent amtillian species. Catora is humanity’s first real contact 
           point with nonhuman intelligence—and the place where the illusion of a 
@@ -392,13 +447,18 @@
         <ul class="list-tight">
           <li><strong>Tech level:</strong> Scattered remnants of the Transync 
             Network.</li>
-          <li><strong>Theme:</strong> New beginnings,survival, and rebuilding 
+          <li><strong>Theme:</strong> New beginnings, survival, and rebuilding 
             in the shadow of catastrophe.</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-      <!-- Tual -->
-      <article class="card">
+    <!-- Tual -->
+    <article class="world-panel" id="tual">
+      <div class="world-image">
+        <img src="images/tual.png" alt="Tual">
+      </div>
+      <div class="world-body">
         <h3>Tual</h3>
         <div class="badge-row">
           <span class="badge badge-strong">Maaket Homeworld</span>
@@ -408,29 +468,34 @@
           Tual is the homeworld of the Maaket, feline-like warriors
           whose culture blends lethal precision with rigid honor. It is a
           technologically advanced world, and becomes a key ally in the fight
-          against the Svixen. A blue-green ocean dense world similar to Earth.
-          Global monarchy-based society.
+          against the Svixen. A blue-green ocean-dense world similar to Earth,
+          structured around a global monarchy-based society.
         </p>
         <ul class="list-tight">
-          <li><strong>Tech level:</strong> Pre-space flight, Experienced with: 
+          <li><strong>Tech level:</strong> Pre-space flight, experienced with 
             energy weapons systems, energy shields, and braiding technology. 
-            Proficient with ground-based antigravity(eg. Hovercarts).</li>
-          <li><strong>Key Figures:</strong> Princess Cashy, Princess Nessa, 
+            Proficient with ground-based antigravity (e.g., hovercarts).</li>
+          <li><strong>Key figures:</strong> Princess Cashy, Princess Nessa, 
             and Ankir.</li>
           <li><strong>Story role:</strong> Place of alliance, first world 
             visited using the Transync network.</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-      <!-- Seutor -->
-      <article class="card">
+    <!-- Seutor -->
+    <article class="world-panel" id="seutor">
+      <div class="world-image">
+        <img src="images/seutor.png" alt="Seutor">
+      </div>
+      <div class="world-body">
         <h3>Seutor</h3>
         <div class="badge-row">
           <span class="badge badge-strong">Tuaca and Natuul Homeworld</span>
           <span class="badge">Jungle &amp; Desert World</span>
         </div>
         <p>
-          An ancient, jungle and desert-riddled planet ruled by the Tuaca, 
+          An ancient, jungle- and desert-riddled planet ruled by the Tuaca 
           and the Natuul. Seutor is where the <em>Ascendant</em> is 
           obtained. The jungle is full of bioluminescent plant life, as 
           well as fierce animal life. The composition of the atmosphere 
@@ -439,18 +504,23 @@
           postmodernism.
         </p>
         <ul class="list-tight">
-          <li><strong>Tech level:</strong> FTL Capable Spaceflight, 
-              Experienced with: Ship weapons systems, communications, and 
+          <li><strong>Tech level:</strong> FTL-capable spaceflight, 
+              experienced with ship weapons systems, communications, and 
               jungle warfare.</li>
           <li><strong>Key figures:</strong> Patron Rohga, Guardian Phostop,
               Posis, and Tivay.</li>
           <li><strong>Story role:</strong> Place of alliance, farewell, and
               a hard-earned hope.</li>
         </ul>
-      </article>
+      </div>
+    </article>
 
-      <!-- Patchave -->
-      <article class="card">
+    <!-- Patchave -->
+    <article class="world-panel" id="patchave">
+      <div class="world-image">
+        <img src="images/patchave.png" alt="Patchave">
+      </div>
+      <div class="world-body">
         <h3>Patchave</h3>
         <div class="badge-row">
           <span class="badge badge-strong">Cruillum Homeworld</span>
@@ -458,7 +528,7 @@
         </div>
         <p>
           Patchave is the desert world of the Cruillum. The planet has frozen 
-          poles that create enormous rivers that span from pole to equator. 
+          poles that create enormous rivers spanning from pole to equator. 
           All of their cities are built along these rivers. The extreme 
           temperatures make for strict daily schedules. Their civilization is
           built on harmonic resonance and “singing to the glass,” manipulating
@@ -470,14 +540,14 @@
         <ul class="list-tight">
           <li><strong>Specialty:</strong> Resonant engineering and glass-based
               tech no one else fully understands. They have learned to work 
-              with the planet's extreme temperatures, they utilize heat 
-              as much as they do shade.</li>
+              with the planet's extreme temperatures, utilizing heat 
+              as much as shade.</li>
           <li><strong>Key figures:</strong> Kess.</li>
           <li><strong>Function in the story:</strong> Crucial repair yard and
               waypoint under pressure.</li>
         </ul>
-      </article>
-    </div>
+      </div>
+    </article>
   </section>
 
   <!-- FACTIONS -->
@@ -490,213 +560,208 @@
       side will erase them.
     </p>
 
-      <article class="card">
-        <h3>Humanity</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Newcomers</span>
-          <span class="badge">High Variance</span>
-        </div>
-        <p>
-          Human beings are late to interstellar travel, but they’re adaptable,
-          stubborn, and bad at doing what they’re told. That mix produces 
-          Lieutenant Christopher Thompkins: a Navy SEAL with a broken past who 
-          becomes the “Dova Sku”—Hell Machine—after becoming part cyborg and 
-          binding with an ancient AI he later names Liam.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Strengths:</strong> Improvisation, emotional resilience,
-              refusal to accept “inevitable” outcomes.</li>
-          <li><strong>Weaknesses:</strong> Fragmented politics, limited tech,
-              almost no understanding of the true rules of the galactic game.</li>
-        </ul>
-      </article>
-    </div>
-    
-      <article class="card">
-        <h3>The Svixen</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Galactic Enemy</span>
-          <span class="badge">Extinction-Level Threat</span>
-        </div>
-        <p>
-          The Svixen are a mammalian race similar to Earth's Red Kangaroo. 
-          The warrior-dominant people are strong, fierce, and skilled in 
-          battle. They have a tribal society where respect and privilege 
-          are earned through battle and conquest. To their enemies, the 
-          Svixen are a nightmare made of beasts, fire, and doctrine. To 
-          themselves, they’re the righteous enforcers of a brutal peace. 
-          They don’t merely conquer worlds—they correct them, pruning 
-          species and civilizations that grow in ways they consider 
-          dangerous, and devolving species they can later use as fodder.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Doctrine:</strong> Destroy the networks, control the
-              species that depend on them.</li>
-          <li><strong>Relationship to Earth:</strong> Historically distant,
-              uncomfortably interested once humans leave Earth.</li>
-          <li><strong>Strengths:</strong> Highly advnaced technology. Fleets 
-              of warships capable of destroying or invading worlds.</li>
-          <li><strong>Weaknesses:</strong> Tribal politics that aren't 
-              always working together, their Code of Honor can be exploited.</li>
-        </ul>
-      </article>
-    </div>
+    <article class="card">
+      <h3>Humanity</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Newcomers</span>
+        <span class="badge">High Variance</span>
+      </div>
+      <p>
+        Human beings are late to interstellar travel, but they’re adaptable,
+        stubborn, and bad at doing what they’re told. That mix produces 
+        Lieutenant Christopher Thompkins: a Navy SEAL with a broken past who 
+        becomes the “Dova Sku”—Hell Machine—after becoming part cyborg and 
+        binding with an ancient AI he later names Liam.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Strengths:</strong> Improvisation, emotional resilience,
+            refusal to accept “inevitable” outcomes.</li>
+        <li><strong>Weaknesses:</strong> Fragmented politics, limited tech,
+            almost no understanding of the true rules of the galactic game.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>The Maakét of Tual</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Allied Warriors</span>
-          <span class="badge">Energy Manipulation Specialists</span>
-        </div>
-        <p>
-          Sleek, feline, and lethally efficient, the Maakét are as much
-          engineers as they are warriors. They specialize in weapons systems,
-          energy shields, and ways of not being where the enemy thinks you are.
-          Their politics are complicated, but once they commit to a fight,
-          they commit with claws out.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Key allies:</strong> Princess Cashy, her sister Nessa,
-              and the warrior Ankir.</li>
-          <li><strong>Contribution:</strong>Energy Inversion techniques, ship 
-              shield upgrades, and Ankir as a warrior companion.</li>
-          <li><strong>Strengths:</strong> Energy shields, energy inversion, 
-              and ground-based antigravity tech.</li>
-          <li><strong>Weaknesses:</strong> Introvert dominant species who prefer 
-              not to leave their own planet. Quick to make rash choices.</li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>The Svixen</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Galactic Enemy</span>
+        <span class="badge">Extinction-Level Threat</span>
+      </div>
+      <p>
+        The Svixen are a mammalian race similar to Earth's red kangaroo. 
+        The warrior-dominant people are strong, fierce, and skilled in 
+        battle. They have a tribal society where respect and privilege 
+        are earned through battle and conquest. To their enemies, the 
+        Svixen are a nightmare made of beasts, fire, and doctrine. To 
+        themselves, they’re the righteous enforcers of a brutal peace. 
+        They don’t merely conquer worlds—they correct them, pruning 
+        species and civilizations that grow in ways they consider 
+        dangerous, and devolving species they can later use as fodder.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Doctrine:</strong> Destroy the networks, control the
+            species that depend on them.</li>
+        <li><strong>Relationship to Earth:</strong> Historically distant,
+            uncomfortably interested once humans leave Earth.</li>
+        <li><strong>Strengths:</strong> Highly advanced technology. Fleets 
+            of warships capable of destroying or invading worlds.</li>
+        <li><strong>Weaknesses:</strong> Tribal politics that aren't 
+            always working together, their Code of Honor can be exploited.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>The Tuaca of Seutor</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Allied Warriors</span>
-          <span class="badge">Space Flight Capable</span>
-        </div>
-        <p>
-          The Tuaca are ape-like, physically imposing, and deeply connected to 
-          nature. Seutor’s deserts and jungles have taught them patience and 
-          perspective, and their culture requires that they be one with nature.
-          They try to stay neutral in the wider conflict, but neutrality has
-          limits when the Svixen bring war to their doorstep. The Tuaca ally 
-          with the humans, but walk a thin line between neutrality and 
-          involvement, offering wisdom, shelter, and transportation, rather 
-          than outright allegiance. Two Tuaca warriors, Posis and Tivay join 
-          the human crew of the <em>Ascendant</em> as they journey to Earth.
-          Their species has spent millennia in opposition to the other species 
-          that shares their world, the Natuul.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Key figures:</strong> Patron Rohga, Guardian Phostop, 
-              Posis and Tivay.</li>
-          <li><strong>Contribution:</strong> The gift of the
-              <em>Ascendant</em>, shielding tech, ship weapons, and a moral 
-              compass in a very amoral war.</li>
-          <li><strong>Strengths:</strong> Using what the world provides and 
-              wasting nothing. Skilled in jungle warfare.</li>
-          <li><strong>Weaknesses:</strong> Fragmented politics, limited tech,
-              almost no understanding of the true rules of the galactic game.</li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>The Maakét of Tual</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Allied Warriors</span>
+        <span class="badge">Energy Manipulation Specialists</span>
+      </div>
+      <p>
+        Sleek, feline, and lethally efficient, the Maakét are as much
+        engineers as they are warriors. They specialize in weapons systems,
+        energy shields, and ways of not being where the enemy thinks you are.
+        Their politics are complicated, but once they commit to a fight,
+        they commit with claws out.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Key allies:</strong> Princess Cashy, her sister Nessa,
+            and the warrior Ankir.</li>
+        <li><strong>Contribution:</strong> Energy inversion techniques, ship 
+            shield upgrades, and Ankir as a warrior companion.</li>
+        <li><strong>Strengths:</strong> Energy shields, energy inversion, 
+            and ground-based antigravity tech.</li>
+        <li><strong>Weaknesses:</strong> Introvert-dominant species who prefer 
+            not to leave their own planet. Quick to make rash choices.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>The Natuul of Seutor</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Not Friends, Not Enemies</span>
-          <span class="badge">Ambush Specialists</span>
-        </div>
-        <p>
-          A hulking orcish species with advanced tech obtained by stealing it 
-          from the Tuaca, but no centralized government. A tribal culture 
-          with frequent conflicts with the Tuaca. Progress comes from raiding 
-          and reverse-engineering Tuaca tech. The human's first excursion 
-          Seutor involves an ambush by a Natuul war party.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Strengths:</strong> Sneak attacks, jungle ambushes, and 
-              overwhelming strength.</li>
-          <li><strong>Weaknesses:</strong> Fragmented politics, little to no 
-              technological advancements on their own.</li>
-        </ul>
-      </article>
-    </div>
+    <article class="card">
+      <h3>The Tuaca of Seutor</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Allied Warriors</span>
+        <span class="badge">Space Flight Capable</span>
+      </div>
+      <p>
+        The Tuaca are ape-like, physically imposing, and deeply connected to 
+        nature. Seutor’s deserts and jungles have taught them patience and 
+        perspective, and their culture requires that they be one with nature.
+        They try to stay neutral in the wider conflict, but neutrality has
+        limits when the Svixen bring war to their doorstep. The Tuaca ally 
+        with the humans, but walk a thin line between neutrality and 
+        involvement, offering wisdom, shelter, and transportation, rather 
+        than outright allegiance. Two Tuaca warriors, Posis and Tivay, join 
+        the human crew of the <em>Ascendant</em> as they journey to Earth.
+        Their species has spent millennia in opposition to the other species 
+        that share their world, the Natuul.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Key figures:</strong> Patron Rohga, Guardian Phostop, 
+            Posis and Tivay.</li>
+        <li><strong>Contribution:</strong> The gift of the
+            <em>Ascendant</em>, shielding tech, ship weapons, and a moral 
+            compass in a very amoral war.</li>
+        <li><strong>Strengths:</strong> Using what the world provides and 
+            wasting nothing. Skilled in jungle warfare.</li>
+        <li><strong>Weaknesses:</strong> Fragmented politics, limited tech,
+            almost no understanding of the true rules of the galactic game.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>The Cruillum of Patchave</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Neutral Engineers</span>
-          <span class="badge">Resonance Specialists</span>
-        </div>
-        <p>
-          The Cruillum are lizard-like humanoids who have turned survival 
-          into an art form, and turned their desert world into a laboratory 
-          for harmonic resonance technology. Their “singing to the glass” 
-          techniques let them coax weapons, shields, and structures into 
-          forms no one else can replicate. They’re not eager to pick sides, 
-          and they understand the value of keeping everyone at arm's length.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Contribution:</strong> Critical ship repairs, Transync
-              gate access, and tech tuned to the <em>Ascendant</em>’s needs.</li>
-          <li><strong>Stance:</strong> Practical, cautious, and always aware
-              of how much heat is being spent.</li>
-           <li><strong>Strengths:</strong> Manipulating harmonic resonance 
-              energy. Using the planet to its fullest potential.</li>
-          <li><strong>Weaknesses:</strong> Introvert dominant species who 
-              welcome strangers with a quick goodbye, and meet neighbors with 
-              blades and fire. Few allies.</li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>The Natuul of Seutor</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Not Friends, Not Enemies</span>
+        <span class="badge">Ambush Specialists</span>
+      </div>
+      <p>
+        A hulking orcish species with advanced tech obtained by stealing it 
+        from the Tuaca, but no centralized government. A tribal culture 
+        with frequent conflicts with the Tuaca. Progress comes from raiding 
+        and reverse-engineering Tuaca tech. The humans’ first excursion to
+        Seutor involves an ambush by a Natuul war party.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Strengths:</strong> Sneak attacks, jungle ambushes, and 
+            overwhelming strength.</li>
+        <li><strong>Weaknesses:</strong> Fragmented politics, little to no 
+            technological advancements on their own.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>The Aku’Ra</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Precursors</span>
-          <span class="badge">Unfinished Business</span>
-        </div>
-        <p>
-          Long gone—or smart enough to stay off stage—the Aku’Ra are the
-          rumored architects behind the Transync network and numerous
-          uplifted species. Between them and the Svixen, the galaxy is full 
-          of wartorn or abandoned worlds. The Millennium War with the Svixen
-          caused the Aku'Ra to set out from their home world tens of thousands 
-          of years ago in an attempt to help other worlds in the Svixen 
-          warpath. Their help came in the form of advanced technology and 
-          genetic manipulation, which they called "Uplifting." Once a species 
-          was uplifted to a certain stage, it would be left to its own devices.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Contribution:</strong> Uplifting of numerous species 
-            throughout the galaxy. Spreading the Transync network to every new 
-            world they uplifted.</li>
-          <li><strong>Stance:</strong> They have done what they can. Now they 
-              let the galactic game play out.</li>
-           <li><strong>Strengths:</strong> Highly advanced technology. Unified 
-              society. Genetic manipulation.</li>
-          <li><strong>Weaknesses:</strong> Unknown at this time.</li>
-           </ul>
-      </article>
+    <article class="card">
+      <h3>The Cruillum of Patchave</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Neutral Engineers</span>
+        <span class="badge">Resonance Specialists</span>
+      </div>
+      <p>
+        The Cruillum are lizard-like humanoids who have turned survival 
+        into an art form, and turned their desert world into a laboratory 
+        for harmonic resonance technology. Their “singing to the glass” 
+        techniques let them coax weapons, shields, and structures into 
+        forms no one else can replicate. They’re not eager to pick sides, 
+        and they understand the value of keeping everyone at arm's length.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Contribution:</strong> Critical ship repairs, Transync
+            gate access, and tech tuned to the <em>Ascendant</em>’s needs.</li>
+        <li><strong>Stance:</strong> Practical, cautious, and always aware
+            of how much heat is being spent.</li>
+        <li><strong>Strengths:</strong> Manipulating harmonic resonance 
+            energy. Using the planet to its fullest potential.</li>
+        <li><strong>Weaknesses:</strong> Introvert-dominant species who 
+            welcome strangers with a quick goodbye, and meet neighbors with 
+            blades and fire. Few allies.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>The Sepu of Randt</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Extinct</span>
-          <span class="badge">Devolved into Sveri Sku</span>
-        </div>
-        <p>
-          A race of amtillians, a class of animal native to Randt, comparable to 
-          both reptiles and amphibians on Earth. Bipedal, walking on their two 
-          digitigrade rear legs with four arms. Unlike all other amtillians who 
-          walked on all six legs. With a skull shape resembling Earth’s canine 
-          species, they were hairless with glossy black skin that shone with 
-          hints of silver-mercury when reflected in the light. Randt was invaded 
-          by the Svixen long before our story begins, and the Sepu race was 
-          devolved into Sveri SKu—Hellhounds—no longer intelligent, they are 
-          commanded into battle as fodder, now willing sacrifices by the Svixen.
-        </p>
-        </p>
-      </article>
-    </div>
+    <article class="card">
+      <h3>The Aku’Ra</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Precursors</span>
+        <span class="badge">Unfinished Business</span>
+      </div>
+      <p>
+        Long gone—or smart enough to stay off stage—the Aku’Ra are the
+        rumored architects behind the Transync network and numerous
+        uplifted species. Between them and the Svixen, the galaxy is full 
+        of wartorn or abandoned worlds. The Millennium War with the Svixen
+        caused the Aku'Ra to set out from their homeworld tens of thousands 
+        of years ago in an attempt to help other worlds in the Svixen 
+        warpath. Their help came in the form of advanced technology and 
+        genetic manipulation, which they called "uplifting." Once a species 
+        was uplifted to a certain stage, it would be left to its own devices.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Contribution:</strong> Uplifting of numerous species 
+          throughout the galaxy. Spreading the Transync network to every new 
+          world they uplifted.</li>
+        <li><strong>Stance:</strong> They have done what they can. Now they 
+            let the galactic game play out.</li>
+        <li><strong>Strengths:</strong> Highly advanced technology. Unified 
+            society. Genetic manipulation.</li>
+        <li><strong>Weaknesses:</strong> Unknown at this time.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>The Sepu of Randt</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Extinct</span>
+        <span class="badge">Devolved into Sveri Sku</span>
+      </div>
+      <p>
+        A race of amtillians, a class of animal native to Randt, comparable to 
+        both reptiles and amphibians on Earth. Bipedal, walking on their two 
+        digitigrade rear legs with four arms, unlike all other amtillians who 
+        walk on all six legs. With a skull shape resembling Earth’s canine 
+        species, they were hairless with glossy black skin that shone with 
+        hints of silver-mercury when reflected in the light. Randt was invaded 
+        by the Svixen long before our story begins, and the Sepu race was 
+        devolved into Sveri Sku—Hellhounds—no longer intelligent, they are 
+        commanded into battle as fodder, now willing sacrifices by the Svixen.
+      </p>
+    </article>
   </section>
 
   <!-- TECHNOLOGY -->
@@ -709,114 +774,111 @@
       changes.
     </p>
 
-      <article class="card">
-        <h3>The EM Tether</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Human FTL</span>
-          <span class="badge">Experimental</span>
-        </div>
-        <p>
-          Earth’s first real stab at faster-than-light travel, the EM Tether
-          is less “warp drive” and more “galactic slingshot”—a way of riding
-          precisely shaped electromagnetic fields along precomputed paths.
-          It’s good enough to reach Catora. It is absolutely not designed to
-          handle the kind of traffic, interference, and weapons that older
-          civilizations throw around as a matter of course.
-        </p>
-      </article>
+    <article class="card">
+      <h3>The EM Tether</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Human FTL</span>
+        <span class="badge">Experimental</span>
+      </div>
+      <p>
+        Earth’s first real stab at faster-than-light travel, the EM Tether
+        is less “warp drive” and more “galactic slingshot”—a way of riding
+        precisely shaped electromagnetic fields along precomputed paths.
+        It’s good enough to reach Catora. It is absolutely not designed to
+        handle the kind of traffic, interference, and weapons that older
+        civilizations throw around as a matter of course.
+      </p>
+    </article>
 
-      <article class="card">
-        <h3>The Transync Network</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Ancient Infrastructure</span>
-          <span class="badge">Travel &amp; Storage</span>
-        </div>
-        <p>
-          Transync is more than communication and more than transit. It’s a
-          mesh of stations, relays, and protocols built to synchronize cities,
-          fleets, and even entire planets. When Chris links with Liam in an
-          old Catoran station, he taps into a faint echo of what the network
-          used to be—and paints a target on himself in the process.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Capabilities:</strong> Fleet coordination, information
-              storage, matter translation under tightly controlled rules.</li>
-          <li><strong>Risks:</strong> Exploitable by empires, catastrophic
-              failure modes on planetary scales.</li>
-        </ul>
-      </article>
-    </div>
+    <article class="card">
+      <h3>The Transync Network</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Ancient Infrastructure</span>
+        <span class="badge">Travel &amp; Storage</span>
+      </div>
+      <p>
+        Transync is more than communication and more than transit. It’s a
+        mesh of stations, relays, and protocols built to synchronize cities,
+        fleets, and even entire planets. When Chris links with Liam in an
+        old Catoran station, he taps into a faint echo of what the network
+        used to be—and paints a target on himself in the process.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Capabilities:</strong> Fleet coordination, information
+            storage, matter translation under tightly controlled rules.</li>
+        <li><strong>Risks:</strong> Exploitable by empires, catastrophic
+            failure modes on planetary scales.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>Dova Sku: “Hell Machine”</h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Hybrid Operator</span>
-          <span class="badge">Living Weapon</span>
-        </div>
-        <p>
-          “Dova Sku” is an alien phrase that roughly translates to
-          “Hell Machine”—a battlefield role where a cybernetic soldier 
-          becomes a terror in battle. In Chris’s case, that also comes with 
-          an alien AI named Liam, and the merge is anything but clean. The 
-          result is faster reaction times, deeper situational awareness, 
-          and a man who’s never fully alone in his own head again. When 
-          combined with the Drake Scale exosuit, the Dova Sku is nearly 
-          unstopable. In Svixen history, their warriors are said to have 
-          only been vulnerable to death when facing a soldier of hell. 
-          The Hell Machine in Svixen history was a Svixen warrior who 
-          completely eradicated a competing tribe single-handedly. A demon 
-          made of flesh and metal.
-        </p>
-        <ul class="list-tight">
-          <li><strong>Upside:</strong> Increased perception, muscle control, 
-              reflexed, and strength.</li>
-          <li><strong>Downside:</strong> The line between “tool” and “person”
-              gets blurry on both sides.</li>
-        </ul>
-      </article>
+    <article class="card">
+      <h3>Dova Sku: “Hell Machine”</h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Hybrid Operator</span>
+        <span class="badge">Living Weapon</span>
+      </div>
+      <p>
+        “Dova Sku” is an alien phrase that roughly translates to
+        “Hell Machine”—a battlefield role where a cybernetic soldier 
+        becomes a terror in battle. In Chris’s case, that also comes with 
+        an alien AI named Liam, and the merge is anything but clean. The 
+        result is faster reaction times, deeper situational awareness, 
+        and a man who’s never fully alone in his own head again. When 
+        combined with the Drake Scale exosuit, the Dova Sku is nearly 
+        unstoppable. In Svixen history, their warriors are said to have 
+        only been vulnerable to death when facing a soldier of hell. 
+        The Hell Machine in Svixen history was a Svixen warrior who 
+        completely eradicated a competing tribe single-handedly—a demon 
+        made of flesh and metal.
+      </p>
+      <ul class="list-tight">
+        <li><strong>Upside:</strong> Increased perception, muscle control, 
+            reflexes, and strength.</li>
+        <li><strong>Downside:</strong> The line between “tool” and “person”
+            gets blurry on both sides.</li>
+      </ul>
+    </article>
 
-      <article class="card">
-        <h3>The <em>Ascendant</em></h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Acquired Warship</span>
-          <span class="badge">Moving Fault Line</span>
-        </div>
-        <p>
-          The <em>Ascendant</em> is more than a ship—it’s a mobile embassy,
-          weapons platform, and cultural pressure cooker. Originally, a 
-          civilian craft owned by a high-class Tuaca citizen of Lesfer. In a 
-          world where ambushes and pirating by the Natuul is a frequent 
-          occurrence, the Tuaca-built ship was designed with attack and 
-          defense in mind. Upgraded with Maakét weapons tech and energy 
-          manipulation inverters, Tuaca, and Maaket blended shielding 
-          techniques, and a fine-tuning of all ship systems by the Cruillum, 
-          all share the same hull while trying not to kill the crew before 
-          the Svixen do.
-        </p>
-        <p>
-          Everywhere it goes, it drags the past with it: old treaties, old
-          grudges, and technologies that were never meant to merge.
-        </p>
-      </article>
+    <article class="card">
+      <h3>The <em>Ascendant</em></h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Acquired Warship</span>
+        <span class="badge">Moving Fault Line</span>
+      </div>
+      <p>
+        The <em>Ascendant</em> is more than a ship—it’s a mobile embassy,
+        weapons platform, and cultural pressure cooker. Originally, a 
+        civilian craft owned by a high-class Tuaca citizen of Lesfer. In a 
+        world where ambushes and pirating by the Natuul is a frequent 
+        occurrence, the Tuaca-built ship was designed with attack and 
+        defense in mind. Upgraded with Maakét weapons tech and energy 
+        manipulation inverters, Tuaca and Maaket blended shielding 
+        techniques, and a fine-tuning of all ship systems by the Cruillum, 
+        all share the same hull while trying not to kill the crew before 
+        the Svixen do.
+      </p>
+      <p>
+        Everywhere it goes, it drags the past with it: old treaties, old
+        grudges, and technologies that were never meant to merge.
+      </p>
+    </article>
 
-       <article class="card">
-        <h3>The <em>L.O.L.A</em></h3>
-        <div class="badge-row">
-          <span class="badge badge-strong">Experimental Human Tech</span>
-          <span class="badge">Team Taxi on Catora</span>
-        </div>
-        <p>
-          The dropship <em>L.O.L.A</em> a human-made prototype designed by 
-          DARPA specifically for troop and vehicle deployment. The Low Orbit 
-          Landing and Assault vehicle is fusion-powered and capable of 
-          planetary entry, atmospheric flight, and low-orbit maneuvering. 
-          Meant to be carried by the Light Skipper and deployed as the crew's 
-          main form of travel around Catora. Two were brought on the mission, 
-          LOLA 1 and LOLA 2. Affectionately called "Lola" by the crew.
-        </p>
-      </article>
-      
-    </div>
+    <article class="card">
+      <h3>The <em>L.O.L.A</em></h3>
+      <div class="badge-row">
+        <span class="badge badge-strong">Experimental Human Tech</span>
+        <span class="badge">Team Taxi on Catora</span>
+      </div>
+      <p>
+        The dropship <em>L.O.L.A</em> is a human-made prototype designed by 
+        DARPA specifically for troop and vehicle deployment. The Low Orbit 
+        Landing and Assault vehicle is fusion-powered and capable of 
+        planetary entry, atmospheric flight, and low-orbit maneuvering. 
+        Meant to be carried by the <em>Light Skipper</em> and deployed as the crew's 
+        main form of travel around Catora. Two were brought on the mission, 
+        LOLA 1 and LOLA 2, affectionately called "Lola" by the crew.
+      </p>
+    </article>
   </section>
 
   <!-- TIMELINE -->
@@ -867,7 +929,7 @@
           <div class="timeline-label"><em>Transync</em></div>
           <div class="timeline-title">Contact, Ruins, and the First Fall</div>
           <p>
-            The crew of the <em>Light Skipper</em> lands on Catora,discovers
+            The crew of the <em>Light Skipper</em> lands on Catora, discovers
             old ruins, alien creatures, and the first hints of the Transync 
             network. The Svixen answer the signal in force. Chris becomes 
             Dova Sku in a last stand that will define who survives to tell 
@@ -904,8 +966,7 @@
       </p>
     </article>
   </section>
-  </div>
-  
+
   <div class="logo-strip">
     <img src="images/Logo.png" alt="Corey Italiano logo">
   </div>

@@ -366,34 +366,36 @@
     }
 
 
-    @media (max-width: 768px) {
-   .nav-inner {
-     padding-inline: 1rem;
-     flex-wrap: wrap; /* let brand and nav stack if needed */
-   }
- 
-   nav ul {
-     gap: 0.6rem;
-     font-size: 0.8rem;
-     flex-wrap: wrap;          /* this is the key */
-     justify-content: flex-end; /* or center, if you prefer */
-   }
- 
-   .grid-2,
-   .glossary-grid {
-     grid-template-columns: minmax(0, 1fr);
-   }
- 
-   .world-panel {
-     grid-template-columns: minmax(0, 1fr);
-   }
- 
-   .world-image {
-     width: 100%;
-     max-width: 320px;
-     margin: 0 auto;
-   }
- }
+  @media (max-width: 768px) {
+    .nav-inner {
+      padding-inline: 1rem;
+      flex-wrap: wrap; /* optional but good for nav wrapping */
+    }
+
+    nav ul {
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      flex-wrap: wrap; /* let nav links wrap too */
+    }
+
+    .grid-2,
+    .glossary-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .world-panel,
+    .species-panel {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .world-image,
+    .species-image {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+
   </style>
 </head>
 <body>
@@ -430,7 +432,93 @@
       to the party—and the bill is already due.
     </p>
   </div>
+  
+    <!-- TIMELINE -->
+  <section id="timeline">
+    <div class="section-kicker">Big Picture</div>
+    <h2>High-Level Timeline (Spoiler-Light)</h2>
+    <p class="section-lede">
+      This isn’t a full canon timeline, just enough to understand where the
+      series sits relative to older wars and future trouble.
+    </p>
 
+    <article class="card">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-label">Long Before Human History</div>
+          <div class="timeline-title">Rise of the Aku’Ra &amp; Millenium Wars</div>
+          <p>
+            The Aku’Ra built the Transync network, uplifted client
+            species, and fought wars over who gets to shape the galaxy. 
+            The Svixen emerge as a great enemy willing to burn worlds 
+            to enforce their version of order.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-label">Prehistoric Earth</div>
+          <div class="timeline-title">A Brush with Something Bigger</div>
+          <p>
+            Earth isn’t entirely ignored. Whether as a test case, a mistake,
+            or something stranger, humanity brushes against the wider conflict.
+            Whatever happened, it’s buried under myth, ice, and fourteen 
+            thousand years of amnesia.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-label">Near Future</div>
+          <div class="timeline-title">Discovery of Catora &amp; the EM Tether</div>
+          <p>
+            Humanity finds Catora and builds the EM Tether to reach it. The
+            mission that carries Chris, Josh, and the rest of the crew to
+            this “new beginning” unknowingly lights up an old node in the
+            Transync network.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-label"><em>Transync</em></div>
+          <div class="timeline-title">Contact, Ruins, and the First Fall</div>
+          <p>
+            The crew of the <em>Light Skipper</em> lands on Catora, discovers
+            old ruins, alien creatures, and the first hints of the Transync 
+            network. The Svixen answer the signal in force. Chris becomes 
+            Dova Sku in a last stand that will define who survives to tell 
+            anyone what happened.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-label"><em>Ascendant</em></div>
+          <div class="timeline-title">A Warship and a Way Home</div>
+          <p>
+            The survivors take control of the <em>Ascendant</em> and try to
+            fight their way back toward Earth through a galaxy already scarred
+            by Svixen campaigns. Old alliances, broken empires, and new
+            enemies all converge around one uncomfortable fact: if Earth
+            doesn’t know what’s coming, it won’t have a say in what happens
+            next.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-label">Book 3 &amp; Beyond</div>
+          <div class="timeline-title">Secrets of the Network</div>
+          <p>
+            The final movements of the Dova Sku saga push deeper into the
+            Transync network and the truth of why any of this was built in
+            the first place. Some wars end. Others just change shape.
+          </p>
+        </div>
+      </div>
+      <p class="note">
+        This page is meant as a companion to the books, not a replacement—major
+        twists, character fates, and specific battles still live in the novels.
+      </p>
+    </article>
+  </section>
+  
   <!-- WORLDS -->
   <section id="worlds">
     <div class="section-kicker">Worlds &amp; Frontiers</div>
@@ -975,92 +1063,6 @@
         Meant to be carried by the <em>Light Skipper</em> and deployed as the crew's 
         main form of travel around Catora. Two were brought on the mission, 
         LOLA 1 and LOLA 2, affectionately called "Lola" by the crew.
-      </p>
-    </article>
-  </section>
-
-  <!-- TIMELINE -->
-  <section id="timeline">
-    <div class="section-kicker">Big Picture</div>
-    <h2>High-Level Timeline (Spoiler-Light)</h2>
-    <p class="section-lede">
-      This isn’t a full canon timeline, just enough to understand where the
-      series sits relative to older wars and future trouble.
-    </p>
-
-    <article class="card">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-label">Long Before Human History</div>
-          <div class="timeline-title">Rise of the Aku’Ra &amp; Millenium Wars</div>
-          <p>
-            The Aku’Ra built the Transync network, uplifted client
-            species, and fought wars over who gets to shape the galaxy. 
-            The Svixen emerge as a great enemy willing to burn worlds 
-            to enforce their version of order.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-label">Prehistoric Earth</div>
-          <div class="timeline-title">A Brush with Something Bigger</div>
-          <p>
-            Earth isn’t entirely ignored. Whether as a test case, a mistake,
-            or something stranger, humanity brushes against the wider conflict.
-            Whatever happened, it’s buried under myth, ice, and fourteen 
-            thousand years of amnesia.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-label">Near Future</div>
-          <div class="timeline-title">Discovery of Catora &amp; the EM Tether</div>
-          <p>
-            Humanity finds Catora and builds the EM Tether to reach it. The
-            mission that carries Chris, Josh, and the rest of the crew to
-            this “new beginning” unknowingly lights up an old node in the
-            Transync network.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-label"><em>Transync</em></div>
-          <div class="timeline-title">Contact, Ruins, and the First Fall</div>
-          <p>
-            The crew of the <em>Light Skipper</em> lands on Catora, discovers
-            old ruins, alien creatures, and the first hints of the Transync 
-            network. The Svixen answer the signal in force. Chris becomes 
-            Dova Sku in a last stand that will define who survives to tell 
-            anyone what happened.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-label"><em>Ascendant</em></div>
-          <div class="timeline-title">A Warship and a Way Home</div>
-          <p>
-            The survivors take control of the <em>Ascendant</em> and try to
-            fight their way back toward Earth through a galaxy already scarred
-            by Svixen campaigns. Old alliances, broken empires, and new
-            enemies all converge around one uncomfortable fact: if Earth
-            doesn’t know what’s coming, it won’t have a say in what happens
-            next.
-          </p>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-label">Book 3 &amp; Beyond</div>
-          <div class="timeline-title">Secrets of the Network</div>
-          <p>
-            The final movements of the Dova Sku saga push deeper into the
-            Transync network and the truth of why any of this was built in
-            the first place. Some wars end. Others just change shape.
-          </p>
-        </div>
-      </div>
-      <p class="note">
-        This page is meant as a companion to the books, not a replacement—major
-        twists, character fates, and specific battles still live in the novels.
       </p>
     </article>
   </section>
